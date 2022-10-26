@@ -57,13 +57,14 @@ const CourseInput = (props) => {
       return;
     }
     props.onAddGoal(enteredValue);
+    setEnteredValue('');
   };
 
   return (
     <form onSubmit={formSubmitHandler}>
       <div className={`${styles['form-control']} ${!isValid && styles.invalid}`}>
         <label>Today List!</label>
-        <input type="text" onChange={goalInputChangeHandler} />
+        <input type="text" value={enteredValue} onChange={goalInputChangeHandler} />
       </div>
       <Button type="submit">Add </Button>
     </form>
